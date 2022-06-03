@@ -2,9 +2,8 @@
 #include <stdio.h>
 
 /**
- * main - entry point
- *
- * Return: 0 number
+ * main - Entry point 
+ ** Return:Always 0 (Success)
  */
 
 int main(void)
