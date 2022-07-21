@@ -1,20 +1,22 @@
 #include "main.h"
 
 /**
- * flip_bits - returns hamming distance of two bit words
- * which is the number of bits you would need to flip to get
- * from one number to another
- * @n: the first bit word
- * @m: the second bit word
+ * flip_bits - returns the number of bits you would
+ * need to flip to get from one number to another
+ * @n: number one.
+ * @m: number two.
  *
- * Return: the hamming distance
+ * Return: number of bits.
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	int shift = (sizeof(n) * BYTE_LENGHT);
-	int dist = 0;
+	unsigned int nbits;
 
-	while (shift--)
-		dist += (n >> shift & 1) != (m >> shift & 1);
-	return (dist);
+	for (nbits = 0; n || m; n >>= 1, m >>= 1)
+	{
+		if ((n & 1) != (m & 1))
+			nbits++;
+	}
+
+	return (nbits);
 }
