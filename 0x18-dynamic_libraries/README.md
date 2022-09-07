@@ -1,1 +1,1 @@
-dynamic libraries
+dynamic libraries in C
